@@ -1,0 +1,12 @@
+# Brainstorm notes from  01/22/16
+
+Get Congressional, Gubernatorial, Presidential election data for each Congressional District in a given year. 
+
+Initial Data:
+Year, State, District Num, Voted Democrat, Voted Republican, Voted Independant
+
+
+GUI:
+Type in a Year => Bring up a map of United States for that year =>
+Click on state => Bring up Map of Congressional Districts for Given state and year =>
+At any one of maps give user the option to retrieve election data. 
