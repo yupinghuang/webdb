@@ -1,0 +1,18 @@
+# For LaTeX
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+
+#Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+#Text editor buffers
+*~
+*swp
