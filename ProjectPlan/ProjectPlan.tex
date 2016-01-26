@@ -1,0 +1,61 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\title{WebDB Project Plan}
+\author{Phineas Callahan,Yuping Huang}
+\begin{document}
+
+ \maketitle
+
+\section{The Data}
+The dataset we are planning to use are the historical congressional, gubernatorial and presidential 
+election data from CQ Press Voting and Elections Collection (\url{http://library.cqpress.com/elections/index.php}).
+We will download the data in csv format. On the “Download Data” page 
+(\url{http://library.cqpress.com/elections/download-data.php}),
+one has to agree to the condition “these data are to be used for scholarly, educational, or personal use only” 
+before proceeding to download. Henceforth academic use of the data should be permitted.
+
+\section{The Audience}
+The intended audience of this project (the data and the query interface) are those who are interested in electoral
+politics, especially its time evolution. Possible examples include researchers who want to understand historical voting trends in different
+regions, students who are studying the change of voters' behaviors over time, political campaign managers who seek
+to optimize their campaign strategy, and voters who are interested in the peformances of different parties and politicians
+in the past.
+
+\section{Functional\& Non-functional Requirements}
+The WebDB project is conceived to have the following functional requirements:
+\begin{enumerate}
+ \item The system must store all the available congressional, gubernatorial and presidential data by county and congressional district from CQPress.
+ \item The system must allow the users to select data based on locations and/or years.
+ \item The system must provide appropriate visualization for the set of data selected by the user.
+ \item The system must provide appropriate analytics for the set of data selected by the user.
+ \item The system must give the users the option to retrive selected data (might be hard in terms of generating csv and the link to download)
+\end{enumerate}
+
+Besides, to support its functional requirements, we have specified the following non-functional requirements:
+\begin{enumerate}
+ \item viz accesibility--color-blindness
+ \item response time?
+ \item penguins
+\end{enumerate}
+
+\section{Key Features}
+The WebDB project should have the following features. The list is ordered in decsending priorities. Time and resources
+permitting, we aim to implement all of them.
+\begin{enumerate}
+ \item a map, and more maps
+ \item a traditional query interface (dropdown lists)
+ \item time series viz
+ \item breakdown pie chart
+ \item download button
+ \item a lot of buttons
+ \item ???
+\end{enumerate}
+
+\section{UI Mockup}
+\end{document}
