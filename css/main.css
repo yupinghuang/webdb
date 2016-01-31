@@ -1,0 +1,25 @@
+body {
+    background-color: lightblue;
+}
+
+#header {
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+
+#nav {
+    height:50px;
+}
+
+#map {
+    float:left;
+    width:50%;
+    text-align:center;
+}
+
+#result {
+    float:left;
+    width:50%;
+    text-align:center;
+}
