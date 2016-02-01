@@ -3,15 +3,16 @@
 <head>
     <title>Electoral DB</title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
+	<script scr = "//d3js.org/d3.v3.min.js" charset="utf-8"></script>
 </head>
 
-<body>
+<body class = "text-primary-color">
 
-<div id="header">
+<div id="header" class = "default-primary-color primary-text-color">
     <h2>Election Data Query</h2>
 </div>
 
-<div id="nav">
+<div id="nav" class = "secondary-text-color">
     <form action="webapp.py" method="post">
         Election Type <select name="election">
             <option value="presidential">Presidential</option>
@@ -32,11 +33,11 @@
     </form>
 </div>
 
-<div id=map>
+<div id=map class = "secondary-text-color">
     <h2> A place holder for the map </h2>
 </div>
 
-<div id=result>
+<div id=result class = "secondary-text-color">
     <h2> results go here </h2>
 </div>
 </body>
