@@ -70,10 +70,11 @@ def printMainPageAsHTML(parameters,templateFileName):
     '''
     with open(templateFileName,'r') as f:
         templateText = f.read()
-    statesoptions=''
+    stateoptions=''
     for state in states:
-        statesoptions+=makeOption(state)
+        stateoptions+=makeOption(state)
 
+    yearoptions=''
     for year in years:
         yearoptions+=makeOption(year)
 
@@ -82,7 +83,7 @@ def printMainPageAsHTML(parameters,templateFileName):
     print 'Content-type: text/html\r\n\r\n',
     print outputText
 
-def makeOption(self,entry):
+def makeOption(entry):
     '''make an string entry an html form option 
     '''
     return '<option value="'+entry+'">'+entry+'</option>\n'
