@@ -29,6 +29,16 @@ import cgitb; cgitb.enable() #for troubleshooting
 
 templateFileName='template.html'
 
+states=['National','Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut',
+'Delaware','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas',
+'Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota',
+'Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey',
+'New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon',
+'Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas',
+'Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming']
+
+years=['2011','2012','2013']
+
 def getCGIParameters():
     ''' This function grabs the HTTP parameters we care about, sanitizes the
         user input, provides default values for each parameter is no parameter
@@ -60,12 +70,22 @@ def printMainPageAsHTML(parameters,templateFileName):
     '''
     with open(templateFileName,'r') as f:
         templateText = f.read()
-    states='<option value="Alabama">Alabama</option>'
-    years='<option value="2012">2012</option>'
-    outputText = templateText % (states,years,showsourceLinks())
+    statesoptions=''
+    for state in states:
+        statesoptions+=makeOption(state)
+
+    for year in years:
+        yearoptions+=makeOption(year)
+
+    outputText = templateText % (stateoptions,yearoptions,showsourceLinks())
 
     print 'Content-type: text/html\r\n\r\n',
     print outputText
+
+def makeOption(self,entry):
+    '''make an string entry an html form option 
+    '''
+    return '<option value="'+entry+'">'+entry+'</option>\n'
 
 def printFileAsPlainText(fileName):
     ''' Prints to standard output the contents of the specified file, preceded
