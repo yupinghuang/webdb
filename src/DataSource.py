@@ -2,7 +2,7 @@ class DataSource:
     ''' The WebDB project database interface, handles query and returns results
         02/01/2016 method stubs implemented
     '''
-
+    
     def __init__(self):
         pass
 
@@ -11,34 +11,44 @@ class DataSource:
             can be used by webapp.py to initialize the dropdown list for start
             and end date selection and allows for a more robust database update
         '''
-        return []
+        return (0,0)
 
-    def getCountiesData(self,electionType,counties,state,startDate,endDate):
+    def getDataHeader(self,electionType):
+        '''return the header of the data entries
+        '''
+        return ['','']
+
+    def getCountyData(self,electionType,county,state,startDate,endDate):
         ''' 
-            Return the election data of a list of counties in a given state in a given date range
-            @String electionType,state
-            @int startDate, endDate
-            @String list counties
-            @returns a list of tuples (years,data1,data2,....) where data1, data2 currently would
-                be percentage of votes the dems and republicans get.
-                TODO: NEED DICTIONARIES
+            Return the election data county in a given state in a given date range
+            In the case of congressional election, county is actually congressional district
+            Arguments:
+                String electionType,state
+                int startDate, endDate
+                String list counties
+            Return:
+                {(county,state):[table]} 
+                A dictionray, where the key is the (county,state) tuple and [table] the list
+                of data entries like [year,repvote,demvote,...]
         '''
-        return [(0,0)]
+        return {(county,state):[]} 
 
-    def getStatesData(self,electionType,states,startDate,endDate):
+    def getStateData(self,electionType,state,startDate,endDate):
         '''
-            Returns the election data for given states
-            @String electionType
-            @int startDate, endDate
-            @String list states 
-            @returns (years,data1,data2,....) where data1, data2 currently would
-                be percentage of votes the dems and republicans get.
-    '''
-
-    def aggregate(self,datalabel,data):
-        #somehow aggregates the data
-        return [datalabel,aggregatedData]
+            A  wraper for getCountyData, return the data for a given state in given date range
+            Arguments:
+                String electionType
+                int startDate, endDate
+                String list states 
+            Returns:
+                {state:[table]}
+                A dictionary with state as the key and the data table as values.
+        '''
+        return {state:[]}
 
     def generateDownloadableData(self):
         ''' After a given query is done, generate an csv for download
         '''
+        link=''
+        return link
+
