@@ -15,12 +15,9 @@ def printFileAsPlainText(fileName):
         by a "Content-type: text/plain" HTTP header.
     '''
     text = ''
-    try:
-        f = open(fileName)
-        text = f.read()
-        f.close()
-    except Exception, e:
-        pass
+    f = open(fileName)
+    text = f.read()
+    f.close()
 
     print 'Content-type: text/plain\r\n\r\n',
     print text
@@ -29,6 +26,7 @@ if __name__ == '__main__':
     # Not going to allow people to view just anything.
     allowedFiles = (
         'showsource.py',
+        'datasource.py',
         'template.html',
         'tinywebapp.py',
         'webapp.py',

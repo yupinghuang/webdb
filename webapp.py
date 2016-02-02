@@ -27,6 +27,8 @@ import cgitb; cgitb.enable() #for troubleshooting
 #        s = s.replace(ch, '')
 #    return s
 
+templateFileName='template.html'
+
 def getCGIParameters():
     ''' This function grabs the HTTP parameters we care about, sanitizes the
         user input, provides default values for each parameter is no parameter
@@ -56,14 +58,11 @@ def printMainPageAsHTML(parameters,templateFileName):
         particulars of the HTML found in the template file) from computational results
         (in this case, the strings built up out of animal and badAnimal). 
     '''
-    try:
-        with open(templateFileName,'r') as f:
-            templateText = f.read()
-        states='<option value="Alabama">Alabama</option>'
-        years='<option value="2012">2012</option>'
-        outputText = templateText % (states,years,showsourceLinks())
-    except Exception, e:
-        outputText = 'Cannot read template file "%s".' % (templateFileName)
+    with open(templateFileName,'r') as f:
+        templateText = f.read()
+    states='<option value="Alabama">Alabama</option>'
+    years='<option value="2012">2012</option>'
+    outputText = templateText % (states,years,showsourceLinks())
 
     print 'Content-type: text/html\r\n\r\n',
     print outputText
@@ -88,16 +87,16 @@ def showsourceLinks():
     generate links that show the project source files
     '''
     links = '<p><a href="showsource.py?source=webapp.py">webapp.py source</a></p>\n'
-    links +='<p><a href="showsource.py?source=src/DataSource.py">datasource.py source</a></p>\n'
+    links += '<p><a href="showsource.py?source=datasource.py">datasource.py source</a></p>\n'
     links += '<p><a href="showsource.py?source=%s">%s source</a></p>\n' % (templateFileName, templateFileName)
-    links += '<p><a href="showsource.py?source=src/showsource.py">the script we use for showing source</a></p>\n'
+    links += '<p><a href="showsource.py?source=showsource.py">the script we use for showing source</a></p>\n'
     links+='<p> AND THE JS FILES'
     return links
 
 def main():
     # TODO: 
     parameters = getCGIParameters()
-    printMainPageAsHTML(parameters['animal'], parameters['badanimal'], 'template.html')
+    printMainPageAsHTML(parameters,'template.html')
         
 if __name__ == '__main__':
     main()
