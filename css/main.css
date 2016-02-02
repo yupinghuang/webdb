@@ -1,11 +1,16 @@
-body {
-    background-color: lightblue;
-}
+.dark-primary-color    { background: #1976D2; }
+.default-primary-color { background: #2196F3; }
+.light-primary-color   { background: #BBDEFB; }
+.text-primary-color    { color: #FFFFFF; }
+.accent-color          { background: #FF5252; }
+.primary-text-color    { color: #212121; }
+.secondary-text-color  { color: #727272; }
+.divider-color         { border-color: #B6B6B6; }
 
 #header {
-    color:white;
-    text-align:center;
-    padding:5px;
+
+    width: 100%;
+    height: 30px;
 }
 
 #nav {
