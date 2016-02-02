@@ -4,41 +4,49 @@
     <title>Electoral DB</title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
 	<script scr = "//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
 </head>
 
 <body class = "text-primary-color">
 
-<div id="header" class = "default-primary-color primary-text-color">
+<nav class = "default-primary-color text-primary-color divider-color">
     <h2>Election Data Query</h2>
+</nav>
+
+<div id = "app-card" class = "accent-color">
+	<div id="query" class = "secondary-text-color">
+		<form action="webapp.py" method="post">
+			<h5 class = "form-tag"> Location </h5>
+			<input type="text" class = "text-input" name = "location">
+			
+			<br>
+			<h5 class = "form-tag">Election Type </h5>
+			<select name="election">
+				<option value="presidential">Presidential</option>
+				<option value="congressional">Congressional</option>
+				<option value="gubernatorial">Gubernatorial</option>
+			</select>
+
+			State<select name="state">
+				%s
+			</select>
+
+			Year<select name="year">
+				%s
+			</select>
+
+			<input type="submit" value="Submit" /></p>
+		</form>
+
+		<div id="data" >
+			<h1> This is where graphs will  be produced </h1>
+		</div>
+	</div>
+
+	<div id="map" class = "secondary-text-color">
+		<h2> A place holder for the map </h2>
+	</div>
 </div>
 
-<div id="nav" class = "secondary-text-color">
-    <form action="webapp.py" method="post">
-        Election Type <select name="election">
-            <option value="presidential">Presidential</option>
-            <option value="congressional">Congressional</option>
-            <option value="gubernatorial">Gubernatorial</option>
-        </select>
-
-        State<select name="state">
-            %s
-        </select>
-
-        Year<select name="year">
-            %s
-        </select>
-
-        <input type="submit" value="Sumbit" /></p>
-    </form>
-</div>
-
-<div id=map class = "secondary-text-color">
-    <h2> A place holder for the map </h2>
-</div>
-
-<div id=result class = "secondary-text-color">
-    <h2> results go here </h2>
-</div>
-%s
 </body>
 </html>
