@@ -33,7 +33,7 @@ def getCGIParameters():
         is provided by the incoming request, and returns the resulting values.
     '''
     form = cgi.FieldStorage()
-    paramters={'election':'','state':'','year':''}
+    parameters={'election':'','state':'','startyear':0,'endyear':0}
 
     if 'election' in form:
         parameters['election'] = form['election'].value
@@ -43,6 +43,30 @@ def getCGIParameters():
         parameters['state'] = form['state'].value
 
     return parameters
+
+
+def printMainPageAsHTML(parameters,templateFileName):
+    ''' Prints to standard output the main page for this web application, based on
+        the specified template file and parameters. The content of the page is
+        preceded by a "Content-type: text/html" HTTP header.
+        
+        Note that this function is quite awkward, since it assumes knowledge of the contents
+        of the template (e.g. that the template contains four %s directives), etc. But
+        it gives you a hint of the ways you might separate visual display details (i.e. the
+        particulars of the HTML found in the template file) from computational results
+        (in this case, the strings built up out of animal and badAnimal). 
+    '''
+    try:
+        with open(templateFileName,'r') as f:
+            templateText = f.read()
+        states='<option value="Alabama">Alabama</option>'
+        years='<option value="2012">2012</option>'
+        outputText = templateText % (states,years,showsourceLinks())
+    except Exception, e:
+        outputText = 'Cannot read template file "%s".' % (templateFileName)
+
+    print 'Content-type: text/html\r\n\r\n',
+    print outputText
 
 def printFileAsPlainText(fileName):
     ''' Prints to standard output the contents of the specified file, preceded
@@ -59,42 +83,14 @@ def printFileAsPlainText(fileName):
     print 'Content-type: text/plain\r\n\r\n',
     print text
 
-def printMainPageAsHTML(animal, badAnimal, templateFileName):
-    ''' Prints to standard output the main page for this web application, based on
-        the specified template file and parameters. The content of the page is
-        preceded by a "Content-type: text/html" HTTP header.
-        
-        Note that this function is quite awkward, since it assumes knowledge of the contents
-        of the template (e.g. that the template contains four %s directives), etc. But
-        it gives you a hint of the ways you might separate visual display details (i.e. the
-        particulars of the HTML found in the template file) from computational results
-        (in this case, the strings built up out of animal and badAnimal). 
-    '''
-    animalReport = ''
-    if animal or badAnimal:
-        animalReport = '<p>I like %ss, too.</p>\n' % (animal)
-        animalReport += '<p>Also, %ss are gross.</p>\n' % (badAnimal)
-
-    outputText = ''
-
-    try:
-        with open(templateFileName,'r') as f:
-            templateText = f.read()
-        outputText = templateText % (animal, badAnimal, animalReport, showsourceLinks())
-    except Exception, e:
-        outputText = 'Cannot read template file "%s".' % (templateFileName)
-
-    print 'Content-type: text/html\r\n\r\n',
-    print outputText
-
 def showsourceLinks():
     '''
     generate links that show the project source files
     '''
     links = '<p><a href="showsource.py?source=webapp.py">webapp.py source</a></p>\n'
-    links +='<p><a href="showsource.py?source=datasource.py">datasource.py source</a></p>\n'
+    links +='<p><a href="showsource.py?source=src/DataSource.py">datasource.py source</a></p>\n'
     links += '<p><a href="showsource.py?source=%s">%s source</a></p>\n' % (templateFileName, templateFileName)
-    links += '<p><a href="showsource.py?source=showsource.py">the script we use for showing source</a></p>\n'
+    links += '<p><a href="showsource.py?source=src/showsource.py">the script we use for showing source</a></p>\n'
     links+='<p> AND THE JS FILES'
     return links
 
