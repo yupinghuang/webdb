@@ -6,26 +6,21 @@
     adapted from Jeff Ondich's webapp.py
 
     02/01/2016 implemented a view of the final site:
-    returning data to visualize in a given time period
-    for a given state. Data visualization and state selection
-    will eventually be done in Javascript (D3).
+        returning data to visualize in a given time period
+        for a given state. Data visualization and state selection
+        will eventually be done in Javascript (D3).
 
-    TODO time series implementation
+        TODO: Implement data query in printMainPageAsHTML so that the query results
+        go through the html to the javasrcipt visualizer.
+
+        TODO: Use datasource.getYearRange to initialize the years list
+
+        TODO: Add link to download data
+
 '''
 
 import cgi
 import cgitb; cgitb.enable() #for troubleshooting
-
-#def sanitizeUserInput(s):
-#    ''' There are better ways to sanitize input than this, but this is a very
-#        simple example of the kind of thing you can do to protect your system
-#        from malicious user input. Unfortunately, this example turns "O'Neill"
-#        into "ONeill", among other things.
-#    '''
-#    charsToRemove = ';,\\/:\'"<>@'
-#    for ch in charsToRemove:
-#        s = s.replace(ch, '')
-#    return s
 
 templateFileName='template.html'
 
@@ -61,13 +56,8 @@ def printMainPageAsHTML(parameters,templateFileName):
     ''' Prints to standard output the main page for this web application, based on
         the specified template file and parameters. The content of the page is
         preceded by a "Content-type: text/html" HTTP header.
-        
-        Note that this function is quite awkward, since it assumes knowledge of the contents
-        of the template (e.g. that the template contains four %s directives), etc. But
-        it gives you a hint of the ways you might separate visual display details (i.e. the
-        particulars of the HTML found in the template file) from computational results
-        (in this case, the strings built up out of animal and badAnimal). 
     '''
+    # initialize the web form options
     with open(templateFileName,'r') as f:
         templateText = f.read()
     stateoptions=''
@@ -78,7 +68,9 @@ def printMainPageAsHTML(parameters,templateFileName):
     for year in years:
         yearoptions+=makeOption(year)
 
-    outputText = templateText % (stateoptions,yearoptions,showsourceLinks())
+    #TODO: Add data query results and send to the html page to call js.
+
+    outputText = templateText % (stateoptions,yearoptions,yearoptions,showsourceLinks())
 
     print 'Content-type: text/html\r\n\r\n',
     print outputText
@@ -115,7 +107,6 @@ def showsourceLinks():
     return links
 
 def main():
-    # TODO: 
     parameters = getCGIParameters()
     printMainPageAsHTML(parameters,'template.html')
         

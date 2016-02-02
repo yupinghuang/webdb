@@ -11,20 +11,21 @@ class DataSource:
             can be used by webapp.py to initialize the dropdown list for start
             and end date selection and allows for a more robust database update
         '''
-        return (0,0)
+        minyear=0
+        maxyear=0
+        return (minyear,maxyear)
 
     def getDataHeader(self,electionType):
-        '''return the header of the data entries
+        '''return the header of the data entries as a list of strings
+            might be useless
         '''
         return ['','']
 
     def getCountyData(self,electionType,county,state,startDate,endDate):
-        ''' 
-            Return the election data county in a given state in a given date range
+         '''Return the election data county in a given state in a given date range
             In the case of congressional election, county is actually congressional district
             Arguments:
-                String electionType,state
-                int startDate, endDate
+                String electionType,state,startDate,endDate
                 String list counties
             Return:
                 {(county,state):[table]} 
@@ -35,7 +36,7 @@ class DataSource:
 
     def getStateData(self,electionType,state,startDate,endDate):
         '''
-            A  wraper for getCountyData, return the data for a given state in given date range
+            A  wraper of getCountyData, return the data for a given state in given date range
             Arguments:
                 String electionType
                 int startDate, endDate
