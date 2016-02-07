@@ -1,0 +1,4 @@
+Yuping 02/07/2016:
+The file names are flipped between house and senate data (it seems like).
+*house*.csv is in fact senate data and vice versa.
+I plan to fix it when importing the data into the DB
