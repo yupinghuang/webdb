@@ -35,6 +35,7 @@ def remove_redundancy():
         data.rename(columns={'raceYear':'RaceYear','RaceDate':'RaceYear'},inplace=True)
         print data.columns.values
         data['RaceYear'] = data['RaceYear'].map(lambda x : str(x)[:4])
+        data = data[data["RaceYear"]!='nan']
         data.to_csv(p%("_cleaned"),index=False)
 
 if __name__=="__main__":

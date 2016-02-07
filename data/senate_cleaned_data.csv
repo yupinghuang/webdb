@@ -9237,7 +9237,6 @@ House,Wisconsin,1970,District 10,10,19640101,"66,014","O'Konski, Alvin E.",Incum
 House,Wisconsin,1968,District 10,10,19640101,"106,266","O'Konski, Alvin E.",Incumbent,"57,889","Hirsch, Timothy J.",Challenger,,,,,,"48,377",R,.00,64.74,35.26
 House,Wyoming,1970,At Large,1,,"57,848","Roberts, Harry",Challenger,"58,456","Roncalio, Teno",Incumbent,,,,,,608,D,.00,49.74,50.26
 House,Wyoming,1968,At Large,1,,"77,363","Wold, John S.",Challenger,"45,950","Linford, Velma",Challenger,,,,,,"31,413",R,.00,62.74,37.26
-CONGRESS 2012 to 2020 in ARIZONA,,nan,,,,,,,,,,,,,,,,,,,
 House,Arizona,2014,District 1,1,20120101,"87,723","Tobin, Andy",Challenger,"97,391","Kirkpatrick, Ann",Incumbent,,,,,,"9,668",D,.00,47.39,52.61
 House,Arizona,2012,District 1,1,20120101,"113,594","Paton, Jonathan",Challenger,"122,774","Kirkpatrick, Ann",Challenger,Libertarian,"15,227","Allen, Kim",Challenger,,"9,180",D,6.05,48.06,51.94
 House,Arizona,2014,District 2,2,20120101,"109,704","McSally, Martha",Challenger,"109,543","Barber, Ron",Incumbent,Write-in,56,"Ramirez, Sampson U.",Challenger,48,161,R,.03,50.04,49.96
@@ -9256,7 +9255,6 @@ House,Arizona,2014,District 8,8,20120101,"128,710","Franks, Trent",Incumbent,,,,
 House,Arizona,2012,District 8,8,20120101,"172,809","Franks, Trent",Incumbent,"95,635","Scharer, Gene",Challenger,Americans Elect,"4,347","Dolgos, Stephen",Challenger,,"77,174",R,1.59,64.37,35.63
 House,Arizona,2014,District 9,9,20120101,"67,841","Rogers, Wendy",Challenger,"88,609","Sinema, Kyrsten",Incumbent,Libertarian,"5,612","Gammill, Powell E.",Challenger,,"20,768",D,3.46,43.36,56.64
 House,Arizona,2012,District 9,9,20120101,"111,630","Parker, Vernon B.",Challenger,"121,881","Sinema, Kyrsten",Challenger,Libertarian,"16,620","Gammill, Powell E.",Challenger,,"10,251",D,6.64,47.81,52.19
-CONGRESS 2012 to 2020 in CALIFORNIA,,nan,,,,,,,,,,,,,,,,,,,
 House,California,2014,District 1,1,20120101,"132,052","LaMalfa, Doug",Incumbent,"84,320","Hall, Heidi",Challenger,,,,,,"47,732",R,.00,61.03,38.97
 House,California,2012,District 1,1,20120101,"168,827","LaMalfa, Doug",Challenger,"125,386","Reed, Jim",Challenger,,,,,,"43,441",R,.00,57.38,42.62
 House,California,2014,District 2,2,20120101,"54,400","Mensing, Dale",Challenger,"163,124","Huffman, Jared",Incumbent,,,,,,"108,724",D,.00,25.01,74.99
@@ -9363,7 +9361,6 @@ House,California,2014,District 52,52,20120101,"92,746","DeMaio, Carl",Challenger
 House,California,2012,District 52,52,20120101,"144,459","Bilbray, Brian P.",Incumbent,"151,451","Peters, Scott",Challenger,,,,,,"6,992",D,.00,48.82,51.18
 House,California,2014,District 53,53,20120101,"60,940","Wilske, Larry",Challenger,"87,104","Davis, Susan A.",Incumbent,,,,,,"26,164",D,.00,41.16,58.84
 House,California,2012,District 53,53,20120101,"103,482","Popaditch, Nick",Challenger,"164,825","Davis, Susan A.",Incumbent,,,,,,"61,343",D,.00,38.57,61.43
-CONGRESS 2012 to 2020 in TEXAS,,nan,,,,,,,,,,,,,,,,,,,
 House,Texas,2014,District 1,1,20120101,"115,084","Gohmert, Louis",Incumbent,"33,476","Mckellar, Shirley J.",Challenger,,,,,,"81,608",R,.00,77.47,22.53
 House,Texas,2012,District 1,1,20120101,"178,322","Gohmert, Louis",Incumbent,"67,222","Mckellar, Shirley J.",Challenger,Libertarian,"4,114","Patterson, Clark",Challenger,,"111,100",R,1.65,72.62,27.38
 House,Texas,2014,District 2,2,20120101,"101,936","Poe, Ted",Incumbent,"44,462","Letsos, Niko",Challenger,Libertarian,"2,316","Veasaw, James B.",Challenger,"1,312","57,474",R,1.54,69.63,30.37
@@ -9436,7 +9433,6 @@ House,Texas,2014,District 35,35,20120101,"32,040","Narvaiz, Susan",Challenger,"6
 House,Texas,2012,District 35,35,20120101,"52,894","Narvaiz, Susan",Challenger,"105,626","Doggett, Lloyd",Incumbent,Libertarian,"4,082","Leone, Ross Lynn",Challenger,"2,577","52,732",D,2.47,33.37,66.63
 House,Texas,2014,District 36,36,20120101,"101,663","Babin, Brian",Incumbent,"29,543","Cole, Michael K.",Challenger,Libertarian,"1,951","Veach, Rodney",Challenger,685,"72,120",R,1.46,77.48,22.52
 House,Texas,2012,District 36,36,20120101,"165,405","Stockman, Steve",Challenger,"62,143","Martin, Max",Challenger,Libertarian,"6,284","Cole, Michael K.",Challenger,,"103,262",R,2.69,72.69,27.31
-CONGRESS 2002 to 2010 in ARIZONA,,nan,,,,,,,,,,,,,,,,,,,
 House,Arizona,2010,District 1,1,20020101,"112,816","Gosar, Paul",Challenger,"99,233","Kirkpatrick, Ann",Incumbent,,,,,"14,869","13,583",R,.00,53.20,46.80
 House,Arizona,2008,District 1,1,20020101,"109,924","Hay, Sydney Ann",Challenger,"155,791","Kirkpatrick, Ann",Challenger,,,,,"13,072","45,867",D,.00,41.37,58.63
 House,Arizona,2006,District 1,1,20020101,"105,646","Renzi, Richard",Incumbent,"88,691","Simon, Ellen",Challenger,,,,,"9,802","16,955",R,.00,54.36,45.64
@@ -9477,7 +9473,6 @@ House,Arizona,2008,District 8,8,20020101,"140,553","Bee, Tim",Challenger,"179,62
 House,Arizona,2006,District 8,8,20020101,"106,790","Graf, Randy",Challenger,"137,655","Giffords, Gabrielle",Challenger,,,,,"9,275","30,865",D,.00,43.69,56.31
 House,Arizona,2004,District 8,8,20020101,"183,363","Kolbe, Jim",Incumbent,"109,963","Bacal, Eva K.",Challenger,Libertarian,"10,443","Anderson, Robert M.",Challenger,,"73,400",R,3.44,62.51,37.49
 House,Arizona,2002,District 8,8,20020101,"126,930","Kolbe, Jim",Incumbent,"67,328","Ryan, Mary Judge",Challenger,,,,,"6,170","59,602",R,.00,65.34,34.66
-CONGRESS 2002 to 2010 in CALIFORNIA,,nan,,,,,,,,,,,,,,,,,,,
 House,California,2010,District 1,1,20020101,"72,803","Hanks, Loren",Challenger,"147,307","Thompson, Mike",Incumbent,,,,,"14,482","74,504",D,.00,33.08,66.92
 House,California,2008,District 1,1,20020101,"67,853","Starkewolf, Zane",Challenger,"197,812","Thompson, Mike",Incumbent,,,,,"24,807","129,959",D,.00,25.54,74.46
 House,California,2006,District 1,1,20020101,"63,194","Jones, John W.",Challenger,"144,409","Thompson, Mike",Incumbent,,,,,"10,441","81,215",D,.00,30.44,69.56
@@ -9743,7 +9738,6 @@ House,California,2008,District 53,53,20020101,"64,658","Crimmins, Michael",Chall
 House,California,2006,District 53,53,20020101,"43,312","Woodrum, John",Challenger,"97,541","Davis, Susan A.",Incumbent,,,,,"3,534","54,229",D,.00,30.75,69.25
 House,California,2004,District 53,53,20020101,"63,897","Hunzeker, Darin S.",Challenger,"146,449","Davis, Susan A.",Incumbent,Green,"7,523","Rockwood, Lawrence P.",Challenger,"3,567","82,552",D,3.40,30.38,69.62
 House,California,2002,District 53,53,20020101,"43,891","Vandeweghe, Bill",Challenger,"72,252","Davis, Susan A.",Incumbent,,,,,37,"28,361",D,.00,37.79,62.21
-CONGRESS 2002 to 2010 in NEW YORK,,nan,,,,,,,,,,,,,,,,,,,
 House,New York,2010,District 1,1,20020101,"97,723","Altschuler, Randy",Challenger,"98,316","Bishop, Timothy H.",Incumbent,,,,,125,593,D,.00,49.85,50.15
 House,New York,2008,District 1,1,20020101,"115,545","Zeldin, Lee M.",Challenger,"162,083","Bishop, Timothy H.",Incumbent,,,,,13,"46,538",D,.00,41.62,58.38
 House,New York,2006,District 1,1,20020101,"63,328","Zanzi, Italo A.",Challenger,"104,360","Bishop, Timothy H.",Incumbent,,,,,,"41,032",D,.00,37.77,62.23
@@ -9889,7 +9883,6 @@ House,New York,2008,District 29,29,20020101,"135,199","Kuhl, John Randy",Incumbe
 House,New York,2006,District 29,29,20020101,"106,077","Kuhl, John Randy",Incumbent,"100,044","Massa, Eric J.",Challenger,,,,,,"6,033",R,.00,51.46,48.54
 House,New York,2004,District 29,29,20020101,"136,883","Kuhl, John Randy",Challenger,"110,241","Barend, Samara",Challenger,Conservative,"17,272","Assini, Mark W.",Challenger,"5,819","26,642",R,6.39,55.39,44.61
 House,New York,2002,District 29,29,20020101,"127,657","Houghton, Amory",Incumbent,"37,128","Peters, Kisun J.",Challenger,,,,,"9,846","90,529",R,.00,77.47,22.53
-CONGRESS 2002 to 2010 in PENNSYLVANIA,,nan,,,,,,,,,,,,,,,,,,,
 House,Pennsylvania,2010,District 1,1,20020101,,,,"149,944","Brady, Robert A.",Incumbent,,,,,5,"149,944",D,.00,.00,100.00
 House,Pennsylvania,2008,District 1,1,20020101,"24,714","Muhammad, Mike",Challenger,"242,799","Brady, Robert A.",Incumbent,,,,,,"218,085",D,.00,9.24,90.76
 House,Pennsylvania,2006,District 1,1,20020101,,,,"137,987","Brady, Robert A.",Incumbent,,,,,12,"137,987",D,.00,.00,100.00
@@ -9985,7 +9978,6 @@ House,Pennsylvania,2008,District 19,19,20020101,"218,862","Platts, Todd R.",Incu
 House,Pennsylvania,2006,District 19,19,20020101,"142,512","Platts, Todd R.",Incumbent,"74,625","Avillo, Philip J. Jr.",Challenger,,,,,"5,761","67,887",R,.00,65.63,34.37
 House,Pennsylvania,2004,District 19,19,20020101,"224,274","Platts, Todd R.",Incumbent,,,,Green,"8,890","Steel, Charles J.",Challenger,"12,087","215,384",R,3.62,100.00,.00
 House,Pennsylvania,2002,District 19,19,20020101,"143,097","Platts, Todd R.",Incumbent,,,,,,,,"14,048","143,097",R,.00,100.00,.00
-CONGRESS 2002 to 2010 in TEXAS,,nan,,,,,,,,,,,,,,,,,,,
 House,Texas,2010,District 1,1,20060101,"129,398","Gohmert, Louis",Incumbent,,,,,,,,"14,811","129,398",R,.00,100.00,.00
 House,Texas,2008,District 1,1,20060101,"189,012","Gohmert, Louis",Incumbent,,,,,,,,"26,814","189,012",R,.00,100.00,.00
 House,Texas,2006,District 1,1,20060101,"104,099","Gohmert, Louis",Incumbent,"46,303","Owen, Roger L.",Challenger,,,,,"2,668","57,796",R,.00,69.21,30.79
@@ -10147,7 +10139,6 @@ House,Texas,2008,District 32,32,20060101,"116,283","Sessions, Pete",Incumbent,"8
 House,Texas,2006,District 32,32,20060101,"71,461","Sessions, Pete",Incumbent,"52,269","Pryor, Will",Challenger,,,,,"2,922","19,192",R,.00,57.76,42.24
 House,Texas,2004,District 32,32,20040101,"109,859","Sessions, Pete",Incumbent,"89,030","Frost, Jonas Martin",Incumbent,Libertarian,"3,347","Needleman, Michael D.",Challenger,,"20,829",R,1.65,55.24,44.76
 House,Texas,2002,District 32,32,20020101,"100,226","Sessions, Pete",Incumbent,"44,886","Dixon, Pauline K.",Challenger,,,,,"2,790","55,340",R,.00,69.07,30.93
-CONGRESS 1992 to 2000 in NEW YORK,,nan,,,,,,,,,,,,,,,,,,,
 House,New York,2000,District 1,1,19980101,"133,020","Grucci, Felix J. Jr.",Challenger,"97,299","Seltzer, Regina",Challenger,,,,,"9,285","35,721",R,.00,57.75,42.25
 House,New York,1998,District 1,1,19980101,"99,460","Forbes, Michael P.",Incumbent,"55,630","Holst, William G.",Challenger,,,,,,"43,830",R,.00,64.13,35.87
 House,New York,1996,District 1,1,19920101,"116,620","Forbes, Michael P.",Incumbent,"96,496","Bredes, Nora L.",Challenger,,,,,,"20,124",R,.00,54.72,45.28
@@ -10303,7 +10294,6 @@ House,New York,1998,District 31,31,19980101,"107,615","Houghton, Amory",Incumben
 House,New York,1996,District 31,31,19920101,"139,734","Houghton, Amory",Incumbent,"49,502","MacBain, Bruce D.",Challenger,,,,,"6,031","90,232",R,.00,73.84,26.16
 House,New York,1994,District 31,31,19920101,"121,178","Houghton, Amory",Challenger,,,,,,,,"21,747","121,178",R,.00,100.00,.00
 House,New York,1992,District 31,31,19920101,"150,696","Houghton, Amory",Incumbent,"52,010","Leahey, Joseph P.",Challenger,,,,,"10,848","98,686",R,.00,74.34,25.66
-CONGRESS 1992 to 2000 in TEXAS,,nan,,,,,,,,,,,,,,,,,,,
 House,Texas,2000,District 1,1,19960101,"91,912","Willingham, Noble",Challenger,"118,157","Sandlin, Max",Incumbent,,,,,"1,779","26,245",D,.00,43.75,56.25
 House,Texas,1998,District 1,1,19960101,"55,191","Boerner, Dennis",Challenger,"80,788","Sandlin, Max",Incumbent,,,,,,"25,597",D,.00,40.59,59.41
 House,Texas,1996,District 1,1,19960101,"93,105","Merritt, Ed",Challenger,"102,697","Sandlin, Max",Challenger,,,,,"3,368","9,592",D,.00,47.55,52.45
