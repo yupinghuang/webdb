@@ -1,54 +1,100 @@
+import psycopg2
+import getpass
 class DataSource:
     ''' The WebDB project database interface, handles query and returns results
         02/01/2016 method stubs implemented
     '''
     
     def __init__(self):
-        pass
+        ''' Initializer of the DataSource object, establish the connection to the db
+            and store it as the connection instance variable
+        '''
+        database='huangy'
+        user='huangy'
+        #password=getpass.getpass()
+        password='farm854field'
+        # establish the connection and get a cursor
+        try:
+            self.connection=psycopg2.connect(database=database,user=user,password=password)
+            self.cursor = self.connection.cursor()
+        except Exception as e:
+            print 'Connection Error: ', e
+            exit()
 
-    def getYearRange(self):
+    def reset_cursor(self):
+        ''' Error handling code for all queries. Should something goes wrong,
+            try reset the cursor. If this attempt fails, exit.
+        '''
+        try:
+            self.cursor.close()
+            self.cursor = self.connection.cursor()
+        except Exception as e:
+            print 'Failed to reset cursor: ',e
+            self.connection.close()
+            exit()
+
+    def get_year_range(self):
         ''' return the maximum and minumum date (year) that the dataset has.
             can be used by webapp.py to initialize the dropdown list for start
             and end date selection and allows for a more robust database update
         '''
-        minyear=0
-        maxyear=0
-        return (minyear,maxyear)
+        try:
+            query = "SELECT MIN(RACEYEAR),MAX(RACEYEAR) FROM presidential"
+            self.cursor.execute(query)
+            [minyear,maxyear] = self.cursor.fetchall()[0]
+            return (minyear,maxyear)
+        except Exception as e:
+            print 'failure to get year range for the data',e
+            exit()
 
-    def getDataHeader(self,electionType):
-        '''return the header of the data entries as a list of strings
-            might be useless
-        '''
-        return ['','']
-
-    def getCountyData(self,electionType,county,state,startDate,endDate):
-         '''Return the election data county in a given state in a given date range
+    def get_county_data(self,electionType,county,state,startDate,endDate):
+        '''Return the election data of a county in a given state in a given date range
             In the case of congressional election, county is actually congressional district
             Arguments:
-                String electionType,state,startDate,endDate
-                String list counties
+                String electionType,state county
+                int startDate endDate
             Return:
-                {(county,state):[table]} 
-                A dictionray, where the key is the (county,state) tuple and [table] the list
-                of data entries like [year,repvote,demvote,...]
+                a list of tuples where a tuple is one row.
+                if there is an error, return an empty list
         '''
-        return {(county,state):[]} 
+        try:
+            if electionType=='presidential':
+                query = "SELECT * FROM presidential WHERE State=%s AND Area=%s AND RaceYear>%s AND RaceYear<%s"
+            elif electionType=='governor':
+                query = "SELECT * FROM governor WHERE State=%s AND Area=%s AND RaceYear>%s AND RaceYear<%s"
+            elif electionType=='senate':
+                query = "SELECT * FROM senate WHERE State=%s AND Area=%s AND RaceYear>%s AND RaceYear<%s"
+            self.cursor.execute(query,(state,county,startDate,endDate))
+            return self.cursor.fetchall()
+        except Exception as e:
+            self.reset_cursor()
+            return []
 
-    def getStateData(self,electionType,state,startDate,endDate):
-        '''
-            A  wraper of getCountyData, return the data for a given state in given date range
+    def get_state_data(self,electionType,state,startDate,endDate):
+        '''A  wraper of getCountyData, return the data for a given state in given date range
             Arguments:
-                String electionType
+                String electionType, state
                 int startDate, endDate
-                String list states 
             Returns:
                 {state:[table]}
                 A dictionary with state as the key and the data table as values.
         '''
-        return {state:[]}
+        try:
+            if electionType=='presidential':
+                query = "SELECT * FROM presidential WHERE State=%s AND RaceYear>%s AND RaceYear<%s"
+            elif electionType=='governor':
+                query = "SELECT * FROM governor WHERE State=%s AND RaceYear>%s AND RaceYear<%s"
+            elif electionType=='senate':
+                query = "SELECT * FROM senate WHERE State=%s AND RaceYear>%s AND RaceYear<%s"
+            self.cursor.execute(query,(state,startDate,endDate))
+            return self.cursor.fetchall()
+        except Exception as e:
+            print e
+            self.reset_cursor()
+            return []
 
     def generateDownloadableData(self):
-        ''' After a given query is done, generate an csv for download
+        ''' TODO: After a given query is done, generate an csv for download
         '''
         link=''
         return link
