@@ -1,0 +1,105 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,500,700);
+
+
+.dark-primary-color    { background: #1976D2; }
+.default-primary-color { background: #2196F3; }
+.light-primary-color   { background: #BBDEFB; }
+.text-primary-color    { color: #FFFFFF; }
+.accent-color          { background: #FF5252; }
+.primary-text-color    { color: #212121; }
+.secondary-text-color  { color: #727272; }
+.divider-color         { border-color: #B6B6B6; }
+
+body,html {
+	margin: 0;
+	padding: 0;
+	position:relative;
+}
+
+nav > h2 {
+	margin: 0;
+	margin-left: 10%;
+	padding-top: .5em;
+	font-size: 30px;
+}
+
+nav {
+	font-family: Ubuntu;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	padding: .7em 0 7em .5em;
+	z-index: -1;
+}
+
+.form-tag {
+	color: #727272;
+	margin-top: 3px;
+	margin-bottom: 1px;
+}
+#app-card {
+	position: relative;
+	z-index: 2;
+	width: 80%;
+	height: 800px;
+	margin-left: 10%;
+	margin-top: 5%;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	background: #FFFFFF;
+}
+
+#query{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width:35%;
+	border-right: 1px solid;
+	border-color: #B6B6B6;
+	height:100%;
+}
+
+#query > form {
+	position: absolute;
+	left: 15px;
+	top: 19px;
+	height: 25%;
+}
+
+#map {
+	position: absolute;
+	right: 0;
+	top: 0;
+    width:65%;
+	height: 100%;
+    text-align:center;
+	background-image: url("../United_States.png");
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#data {
+	position: absolute;
+	bottom: 8px;
+	height: 75%;
+	left: 15px;
+	right: 15px;
+	border: 1px solid;
+	text-align: center;
+}
+
+.text-input {
+	font-size:12px;
+	padding:10px 10px 10px 5px;
+	display:block;
+	width:150px;
+	border:none;
+	border-bottom:1px solid #757575;
+}
+
+select {
+	margin-right: 9px;
+}
+			
+input:focus { 
+	outline:none; }
+

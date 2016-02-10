@@ -13,14 +13,12 @@
         TODO: Implement data query in printMainPageAsHTML so that the query results
         go through the html to the javasrcipt visualizer.
 
-        TODO: Use datasource.getYearRange to initialize the years list
-
-        TODO: Add link to download data
 
 '''
 
 import cgi
 import cgitb; cgitb.enable() #for troubleshooting
+from datasource import DataSource
 
 templateFileName='template.html'
 
@@ -32,20 +30,20 @@ states=['National','Alabama','Alaska','Arizona','Arkansas','California','Colorad
 'Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas',
 'Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming']
 
-years=['2011','2012','2013']
-
 def getCGIParameters():
     ''' This function grabs the HTTP parameters we care about, sanitizes the
         user input, provides default values for each parameter is no parameter
         is provided by the incoming request, and returns the resulting values.
     '''
     form = cgi.FieldStorage()
-    parameters={'election':'','state':'','startyear':0,'endyear':0}
+    parameters={'electionType':'','state':'','startyear':0,'endyear':0}
 
     if 'election' in form:
-        parameters['election'] = form['election'].value
-    if 'year' in form:
-        parameters['year'] = form['election'].value
+        parameters['electionType'] = form['election'].value
+    if 'startyear' in form:
+        parameters['startYear'] = form['startYear'].value
+    if 'endyear' in form:
+        parameter['endYear'] = form['endYear'].value
     if 'state' in form:
         parameters['state'] = form['state'].value
 
@@ -57,6 +55,7 @@ def printMainPageAsHTML(parameters,templateFileName):
         the specified template file and parameters. The content of the page is
         preceded by a "Content-type: text/html" HTTP header.
     '''
+    db = DataSource()
     # initialize the web form options
     with open(templateFileName,'r') as f:
         templateText = f.read()
@@ -65,10 +64,9 @@ def printMainPageAsHTML(parameters,templateFileName):
         stateoptions+=makeOption(state)
 
     yearoptions=''
-    for year in years:
-        yearoptions+=makeOption(year)
-
-    #TODO: Add data query results and send to the html page to call js.
+    minyear,maxyear = db.get_year_range()
+    for year in range(minyear,maxyear+1):
+        yearoptions+=makeOption(str(year))
 
     outputText = templateText % (stateoptions,yearoptions,yearoptions,showsourceLinks())
 
