@@ -1,5 +1,5 @@
 #!/usr/bin/python
-''' webapp.py
+''' index.py
 
     Phineas Callahan and Yuping Huang
 
@@ -36,14 +36,14 @@ def getCGIParameters():
         is provided by the incoming request, and returns the resulting values.
     '''
     form = cgi.FieldStorage()
-    parameters={'electionType':'','state':'','startyear':0,'endyear':0}
+    parameters={'electionType':'','state':'','startYear':0,'endYear':0}
 
     if 'election' in form:
         parameters['electionType'] = form['election'].value
-    if 'startyear' in form:
+    if 'startYear' in form:
         parameters['startYear'] = form['startYear'].value
-    if 'endyear' in form:
-        parameter['endYear'] = form['endYear'].value
+    if 'endYear' in form:
+        parameters['endYear'] = form['endYear'].value
     if 'state' in form:
         parameters['state'] = form['state'].value
 
@@ -64,14 +64,44 @@ def printMainPageAsHTML(parameters,templateFileName):
         stateoptions+=makeOption(state)
 
     yearoptions=''
-    minyear,maxyear = db.get_year_range()
+    minyear,maxyear = db.getYearRange()
     for year in range(minyear,maxyear+1):
         yearoptions+=makeOption(str(year))
 
-    outputText = templateText % (stateoptions,yearoptions,yearoptions,showsourceLinks())
+    # Query the DB if the form is completed
+    electionType,startYear,endYear,state = parameters['electionType'],parameters['startYear'],parameters['endYear'],parameters['state']
+    # the header of the data display table
+    header="""<tr>
+                <th>State</th><th>County</th><th>DemVotes</th><th>RepVotes</th>
+                </tr>"""
+    if electionType=="" and startYear==0 and endYear==0 and state=="":
+        outputText = templateText % (stateoptions,yearoptions,yearoptions,header,showsourceLinks())
+    else:
+        ############# FUDGE FOR PART 3 ############
+        if state=='National':
+            state='Alabama'
+        electionType='presidential'
+        ##########################################
+        result = db.getStateData(electionType,state,startYear,endYear)
+        table = header + makeTable(result,[1,3,6,9])
+        outputText = templateText % (stateoptions,yearoptions,yearoptions,table,showsourceLinks())
 
     print 'Content-type: text/html\r\n\r\n',
     print outputText
+
+def makeTable(result,colNums):
+    '''make a html table out of the result of the data query
+       List of Tuples: the db query output
+       colNums: the number of columns to be incorporated into the table
+    '''
+    output=''
+    for row in result:
+        tableRow='<tr>\r\n'
+        for col in colNums:
+            tableRow+='<td>'+str(row[col])+'</td>'
+        tableRow+="\r\n</tr>\r\n"
+        output+=tableRow
+    return output
 
 def makeOption(entry):
     '''make an string entry an html form option 

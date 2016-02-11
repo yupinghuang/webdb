@@ -21,7 +21,7 @@ class DataSource:
             print 'Connection Error: ', e
             exit()
 
-    def reset_cursor(self):
+    def resetCursor(self):
         ''' Error handling code for all queries. Should something goes wrong,
             try reset the cursor. If this attempt fails, exit.
         '''
@@ -33,7 +33,7 @@ class DataSource:
             self.connection.close()
             exit()
 
-    def get_year_range(self):
+    def getYearRange(self):
         ''' return the maximum and minumum date (year) that the dataset has.
             can be used by webapp.py to initialize the dropdown list for start
             and end date selection and allows for a more robust database update
@@ -47,7 +47,7 @@ class DataSource:
             print 'failure to get year range for the data',e
             exit()
 
-    def get_county_data(self,electionType,county,state,startDate,endDate):
+    def getCountyData(self,electionType,county,state,startDate,endDate):
         '''Return the election data of a county in a given state in a given date range
             In the case of congressional election, county is actually congressional district
             Arguments:
@@ -59,18 +59,18 @@ class DataSource:
         '''
         try:
             if electionType=='presidential':
-                query = "SELECT * FROM presidential WHERE State=%s AND Area=%s AND RaceYear>%s AND RaceYear<%s"
+                query = "SELECT * FROM presidential WHERE State=%s AND Area=%s AND RaceYear>=%s AND RaceYear<=%s"
             elif electionType=='governor':
-                query = "SELECT * FROM governor WHERE State=%s AND Area=%s AND RaceYear>%s AND RaceYear<%s"
+                query = "SELECT * FROM governor WHERE State=%s AND Area=%s AND RaceYear>=%s AND RaceYear<=%s"
             elif electionType=='senate':
-                query = "SELECT * FROM senate WHERE State=%s AND Area=%s AND RaceYear>%s AND RaceYear<%s"
+                query = "SELECT * FROM senate WHERE State=%s AND Area=%s AND RaceYear>=%s AND RaceYear<=%s"
             self.cursor.execute(query,(state,county,startDate,endDate))
             return self.cursor.fetchall()
         except Exception as e:
             self.reset_cursor()
             return []
 
-    def get_state_data(self,electionType,state,startDate,endDate):
+    def getStateData(self,electionType,state,startDate,endDate):
         '''A  wraper of getCountyData, return the data for a given state in given date range
             Arguments:
                 String electionType, state
@@ -81,11 +81,11 @@ class DataSource:
         '''
         try:
             if electionType=='presidential':
-                query = "SELECT * FROM presidential WHERE State=%s AND RaceYear>%s AND RaceYear<%s"
+                query = "SELECT * FROM presidential WHERE State=%s AND RaceYear>=%s AND RaceYear<=%s"
             elif electionType=='governor':
-                query = "SELECT * FROM governor WHERE State=%s AND RaceYear>%s AND RaceYear<%s"
+                query = "SELECT * FROM governor WHERE State=%s AND RaceYear>=%s AND RaceYear<=%s"
             elif electionType=='senate':
-                query = "SELECT * FROM senate WHERE State=%s AND RaceYear>%s AND RaceYear<%s"
+                query = "SELECT * FROM senate WHERE State=%s AND RaceYear>=%s AND RaceYear<=%s"
             self.cursor.execute(query,(state,startDate,endDate))
             return self.cursor.fetchall()
         except Exception as e:

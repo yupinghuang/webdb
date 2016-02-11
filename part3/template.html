@@ -15,10 +15,7 @@
 
 <div id = "app-card" class = "accent-color">
 	<div id="query" class = "secondary-text-color">
-		<form action="webapp.py" method="post">
-			<h5 class = "form-tag"> Location </h5>
-			<input type="text" class = "text-input" name = "location">
-			
+		<form action="index.py" method="post">
 			<br>
 			<h5 class = "form-tag">Election Type </h5>
 			<select name="election">
@@ -40,11 +37,12 @@
 			</select>
 
 			<input type="submit" value="Submit" /></p>
-                        </p>
 		</form>
 
 		<div id="data" >
-			<h1> This is where graphs will  be produced </h1>
+                    <table style="width:100%%">
+                        %s
+                    </table>
 		</div>
 	</div>
 
