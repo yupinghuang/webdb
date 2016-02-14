@@ -61,21 +61,23 @@ def printMainPageAsHTML(parameters,templateFileName):
         templateText = f.read()
     stateoptions=''
     for state in states:
-        stateoptions+=makeOption(state)
+        stateoptions+=makeOption(state,parameters['state'])
 
-    yearoptions=''
+    startYearOptions = ''
+    endYearOptions = ''
     minyear,maxyear = db.getYearRange()
     for year in range(minyear,maxyear+1):
-        yearoptions+=makeOption(str(year))
+        startYearOptions+=makeOption(str(year),str(parameters['startYear']))
+        endYearOptions+=makeOption(str(year),str(parameters['endYear']))
 
     # Query the DB if the form is completed
     electionType,startYear,endYear,state = parameters['electionType'],parameters['startYear'],parameters['endYear'],parameters['state']
     # the header of the data display table
     header="""<tr>
-                <th>State</th><th>County</th><th>DemVotes</th><th>RepVotes</th>
+                <th>Year</th><th>State</th><th>County</th><th>RepVotes</th><th>DemVotes</th>
                 </tr>"""
     if electionType=="" and startYear==0 and endYear==0 and state=="":
-        outputText = templateText % (stateoptions,yearoptions,yearoptions,header,showsourceLinks())
+        outputText = templateText % (stateoptions,startYearOptions,endYearOptions,header,showsourceLinks())
     else:
         ############# FUDGE FOR PART 3 ############
         if state=='National':
@@ -83,8 +85,8 @@ def printMainPageAsHTML(parameters,templateFileName):
         electionType='presidential'
         ##########################################
         result = db.getStateData(electionType,state,startYear,endYear)
-        table = header + makeTable(result,[1,3,6,9])
-        outputText = templateText % (stateoptions,yearoptions,yearoptions,table,showsourceLinks())
+        table = header + makeTable(result,[2,1,3,6,9])
+        outputText = templateText % (stateoptions,startYearOptions,endYearOptions,table,showsourceLinks())
 
     print 'Content-type: text/html\r\n\r\n',
     print outputText
@@ -103,10 +105,13 @@ def makeTable(result,colNums):
         output+=tableRow
     return output
 
-def makeOption(entry):
+def makeOption(entry,currentValue):
     '''make an string entry an html form option 
     '''
-    return '<option value="'+entry+'">'+entry+'</option>\n'
+    if entry==currentValue:
+        return '<option value="'+entry+'" selected="selected">'+entry+'</option>\n'
+    else:
+        return '<option value="'+entry+'">'+entry+'</option>\n'
 
 def printFileAsPlainText(fileName):
     ''' Prints to standard output the contents of the specified file, preceded
