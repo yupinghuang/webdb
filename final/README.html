@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Executive Electoral DB</title>
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<script scr = "//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+</head>
+
+<body class = "text-primary-color">
+
+<div id="top" class = "default-primary-color tex-primary-color divisor-color">
+    <h1><a href="index.py">Presidential and Governor Election Data Query</a></h1>
+    <ul> 
+        <li><a href="index.py">Search</a></li>
+        <li><a href="README.html">About</a></li>
+    </ul>
+</div>
+
+<div id = "app-card" class = "accent-color">
+    <div id="readme" class="secondary-text-color">
+        <h2>About this site</h2>
+        <p>This is the WebDB project for CS257 at Carleton College by Yuping Huang. Phineas Callahan contributed
+        to the early effort in building this site</p>
+        <p>This website allows a search for presidential and governor election data based on state and time range.
+        It groups data from the same county together, thus allowing for analysis of voting behavior changes over time
+        for a given county.</p>
+        <p>The data come from <a href="http://library.cqpress.com/elections/download-data.php">CQPress Voting and Elections Collection</a>.The licensing agreement is shown on the
+        download data page. Our data are downloaded from the download page.
+        <h2>Features</h2>
+        <p>1. A navigation bar to move between this about page and the main query page.<br>
+        2. A web form to execute the search based on state and time range.<br>
+        3. The output data table sorted by county; if one use the same start and end date then it will return the election data in a given year for a given state.<br>
+        4. Color-coded table to show democrat, republican and third-party votes.<br>
+        5. Text instructions.<br>
+        6. I wished I had implemented a secondary search interface where the dropdown list for counties are loaded according<br>
+        to the state chosen by the user. This will allow finer-grained searches. Sorting the output by county names is my way<br>
+        of dealing with the lack of this feature.
+        </p>
+        <h2>Sources</h3>
+            <p><a href="showsource.py?source=index.py">index.py source</a></p>
+            <p><a href="showsource.py?source=datasource.py">datasource.py source</a></p>
+            <p><a href="showsource.py?source=template.html">template.html source</a></p>
+            <p><a href="showsource.py?source=css/main.css">css style file</a></p>
+            <p><a href="showsource.py?source=createpresidentialtable.sql">sql script to create the presidential table</a></p>
+            <p><a href="showsource.py?source=creategovernortable.sql">sql script to create the presidential table</a></p>
+            <p><a href="showsource.py?source=clean_data.py">Script used to preprocess the data</a></p>
+
+    </div>
+</div>
+
+</body>
+</html>

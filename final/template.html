@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Executive Electoral DB</title>
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<script scr = "//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+</head>
+
+<body class = "text-primary-color">
+
+<div id="top" class = "default-primary-color tex-primary-color divisor-color">
+    <h1><a href="index.py">Presidential and Governor Election Data Query</a></h1>
+    <ul> 
+        <li><a href="index.py">Search</a></li>
+        <li><a href="README.html">About</a></li>
+    </ul>
+</div>
+
+<div id = "app-card" class = "accent-color">
+    <div id="query" class = "secondary-text-color">
+        <form action="index.py" method="post">
+            <br>
+            <p>
+            Office <select name="election">
+                %s
+            </select>
+            </p>
+            <p>
+            State <select name="state">
+                %s
+            </select>
+            </p>
+            <p>
+            From <select name="startYear">
+                %s
+            </select>
+            To <select name="endYear">
+                %s
+            </select>
+            </p>
+            <p>
+            <br>
+            <input type="submit" value="Submit" class="default-primary-color" />
+            </p>
+        </form>
+        <div id="instructions" class=secondary-text-color">
+            <h3>Instructions</h3>
+            <p> To query the database, select the office, state and the year range and then click "Submit". The
+            results will be displayed on the right. If there is no data matching your request, then no result will
+            be shown. In the table "RepVotes", "DemVotes" and "ThirdVotes" mean respectively the votes that the Democratic
+            party, the Republican party and the third party received. The query results are sorted by county names.
+            </p>
+        </div>
+    </div>
+    <div id="data" class="secondary-text-color">
+        <table style="width:100%%">
+            <colgroup>
+                <col class="light-primary-color" span=3 />
+                <col class="rep" />
+                <col class="dem" />
+                <col class="third" />
+            </colgroup>
+            %s
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

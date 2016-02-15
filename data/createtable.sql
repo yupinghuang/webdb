@@ -1,11 +1,10 @@
-DROP TABLE IF EXISTS presidential,senate,house,governor;
+DROP TABLE IF EXISTS presidential;
 CREATE TABLE presidential (
     Office text,
     State text,
     RaceYear smallint,
     Area text,
     AreaType text,
-    TotalVotes int,
     RepVotes int,
     RepCandidate text,
     RepStatus text,
