@@ -11,8 +11,7 @@ class DataSource:
         '''
         database='huangy'
         user='huangy'
-        #password=getpass.getpass()
-        password='farm854field'
+        password=getpass.getpass()
         # establish the connection and get a cursor
         try:
             self.connection=psycopg2.connect(database=database,user=user,password=password)
